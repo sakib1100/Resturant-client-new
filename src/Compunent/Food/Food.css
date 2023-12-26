@@ -1,0 +1,28 @@
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+ 
+    
+}
+ul li{
+    margin: 10px;
+}
+ul li a{
+    text-decoration: none;
+   
+    color: #050505;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+ul li a:hover{
+    
+    
+}
+
+.active{
+    background-color: red;
+    color: #fff;
+}
