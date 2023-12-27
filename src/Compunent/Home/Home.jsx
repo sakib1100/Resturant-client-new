@@ -1,5 +1,5 @@
-import Food from "../Food/Food";
-
+import { NavLink, Outlet } from "react-router-dom";
+import './Home.css'
 const Home = () => {
     return (
         <div>
@@ -13,8 +13,25 @@ const Home = () => {
     </div>
   </div>
 </div>
-
-           <Food />
+<div>
+      <section className="my-12 max-w-screen-xl mx-auto px-6">
+        <div className="flex items-center justify-center space-x-6">
+          <ul>
+            <li>
+              <NavLink className="transition-5" activeClassName="active" to="/" >Breakfast</NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="active" to="/lunch">Lunch</NavLink>
+            </li>
+            <li>
+              <NavLink activeClassName="active" to="dinner">Dinner</NavLink>
+            </li>
+          </ul>
+        </div>
+      </section>
+   
+    </div>
+    <Outlet />
 
         </div>
     );
