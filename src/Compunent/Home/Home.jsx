@@ -24,7 +24,7 @@ const Home = () => {
               <NavLink activeClassName="active" to="/lunch">Lunch</NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="dinner">Dinner</NavLink>
+              <NavLink activeClassName="active" to="/dinner">Dinner</NavLink>
             </li>
           </ul>
         </div>

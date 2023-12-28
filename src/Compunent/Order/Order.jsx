@@ -1,34 +1,81 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Order = () => {
+const [count,setCount] = useState(1);
+const [data,setData] = useState('');
 
-    const [lunch, setLunch] = useState([]);
+const {price} = data;
+const totalPrice = price * count;
+const {id} = useParams();
+console.log(data.name)
+useEffect(() => {
+  fetch(`http://localhost:5000/getBrakFastInsert/${id}`)
+  .then(res => res.json())
+  .then(breakfast => setData(breakfast))
+},[])
 
-    useEffect(() => {
-        fetch('lunch.json')
-            .then(res => res.json())
-            .then(data => setLunch(data))
-            .catch(error => console.error("Error fetching lunch data:", error));
-    }, []);
+useEffect(() => {
+  fetch(`http://localhost:5000/getLunchInsert/${id}`)
+  .then(res => res.json())
+  .then(lunch => setData(lunch))
+},[])
+useEffect(() => {
+  fetch(`http://localhost:5000/getDinnerInsert/${id}`)
+  .then(res => res.json())
+  .then(dinner => setData(dinner))
+},[])
+
+
+
+const handleOnSubmit = () => {
+  fetch('http://localhost:5000/postData', {
+  method: 'POST',
+  body: JSON.stringify({
+    name:data.name,
+    price:totalPrice,
+    quantity:count,
+    img:data.img
+   
+
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+  alert('Data Inserted')
+}
+
 
     return (
-        <div className="mx-20">
-            <h1>Lunch for you {lunch.length}</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
-                {lunch.map((dataLunch) => (
-                    <div key={dataLunch.id} className="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
-                        <span className="bg-red-100 border border-red-500 rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4">Lunch</span>
-                        <img className="w-64 mx-auto transform transition duration-300 hover:scale-105" src={dataLunch.img} alt={dataLunch.name} />
-                        <div className="flex flex-col items-center my-3 space-y-2">
-                            <h1 className="text-gray-900 poppins text-lg">{dataLunch.name}</h1>
-                            <p className="text-gray-500 poppins text-sm text-center">{dataLunch.description}</p>
-                            <h2 className="text-gray-900 poppins text-2xl font-bold">${dataLunch.price}</h2>
-                            <button className="bg-orange-600 text-white px-8 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">Order Now</button>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
+      <div className="hero min-h-screen lg:mt-10">
+  <div className="hero-content flex-col lg:flex-row">
+    <img src={data.img} className="max-w-md rounded-lg " />
+    <div>
+      <h1 className="text-5xl font-bold">{data.name}</h1>
+      <p className="py-6">{data.descreption}</p>
+      <p className="text-4xl mb-3">Price: ${totalPrice}</p>
+      <div className="custom-number-input h-10 w-32 mb-10">
+
+  <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+    <button onClick={() => {count > 1 ?  setCount(count - 1): ''}} data-action="decrement" className=" bg-orange-600 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+      <span  className=" m-auto text-2xl font-thin">−</span>
+    </button>
+    <div className="flex items-center p-5 border"> <p className="text-2xl">{count}</p></div>
+  <button onClick={() => setCount(count + 1)} data-action="increment" className="bg-orange-600 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+    <span className="m-auto text-2xl font-thin">+</span>
+  </button>
+</div>
+</div>
+
+
+      <button onClick={handleOnSubmit} className="btn bg-orange-600 text-white hover:text-black">Order Submit</button>
+
+    </div>
+  </div>
+</div>
     );
 };
 

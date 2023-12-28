@@ -1,6 +1,6 @@
 [
     {
-    "id": 1,
+    
     "name": "Baked Chicken",
     "img" : "https://red-onion-restaurant-41dbe.web.app/assets/Dinner/dinner1.png",
     "descreption": "Gay one the what walk then she. Demesne mention pr",
@@ -8,7 +8,7 @@
 
     },
     {
-    "id": 2,
+   
     "name": "Lemony Salmaon Piccata",
     "img" : "https://red-onion-restaurant-41dbe.web.app/assets/Dinner/dinner2.png",
     "descreption": "Gay one the what walk then she. Demesne mention pr",
@@ -16,7 +16,7 @@
 
     },
     {
-    "id": 3,
+   
     "name": "Lentil Salad",
     "img" : "https://red-onion-restaurant-41dbe.web.app/assets/Dinner/dinner6.png",
     "descreption": "Gay one the what walk then she. Demesne mention pr",
@@ -24,7 +24,7 @@
 
     },
     {
-    "id": 4,
+  
     "name": "Pork Tenderion",
     "img" : "https://red-onion-restaurant-41dbe.web.app/assets/Dinner/dinner5.png",
     "descreption": "Gay one the what walk then she. Demesne mention pr",
@@ -32,7 +32,7 @@
 
     },
     {
-    "id": 5,
+  
     "name": "Garlic Butter Baked Salmon",
     "img" : "https://red-onion-restaurant-41dbe.web.app/assets/Dinner/dinner3.png",
     "descreption": "Gay one the what walk then she. Demesne mention pr",
@@ -40,9 +40,9 @@
 
     },
     {
-    "id": 6,
+
     "name": "French Fried with Cheese",
-    "img" : "https://red-onion-restaurant-41dbe.web.app/assets/Dinner/dinner4.pnge",
+    "img" : "https://red-onion-restaurant-41dbe.web.app/assets/Dinner/dinner4.png",
     "descreption": "Gay one the what walk then she. Demesne mention pr",
     "price": 16.99
 
