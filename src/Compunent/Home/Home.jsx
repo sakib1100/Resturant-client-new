@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import './Home.css'
+import Review from "../Review/Review";
 const Home = () => {
     return (
         <div>
@@ -9,7 +10,7 @@ const Home = () => {
     <div className="">
       <h1 className="mb-5 text-5xl font-bold">Best food waiting for your belly
 </h1>
-      <button className="btn bg-orange-600 border-0 rounded-badge text-white">Order Now</button>
+      <button className="btn bg-lime-500 border-0 rounded-badge text-white">Order Now</button>
     </div>
   </div>
 </div>
@@ -33,6 +34,7 @@ const Home = () => {
     </div>
     <Outlet />
 
+    <Review /> 
         </div>
     );
 };

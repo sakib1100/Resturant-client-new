@@ -60,18 +60,18 @@ const handleOnSubmit = () => {
       <div className="custom-number-input h-10 w-32 mb-10">
 
   <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-    <button onClick={() => {count > 1 ?  setCount(count - 1): ''}} data-action="decrement" className=" bg-orange-600 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+    <button onClick={() => {count > 1 ?  setCount(count - 1): ''}} data-action="decrement" className=" bg-lime-500 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
       <span  className=" m-auto text-2xl font-thin">−</span>
     </button>
     <div className="flex items-center p-5 border"> <p className="text-2xl">{count}</p></div>
-  <button onClick={() => setCount(count + 1)} data-action="increment" className="bg-orange-600 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+  <button onClick={() => setCount(count + 1)} data-action="increment" className="bg-lime-500 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
     <span className="m-auto text-2xl font-thin">+</span>
   </button>
 </div>
 </div>
 
 
-      <button onClick={handleOnSubmit} className="btn bg-orange-600 text-white hover:text-black">Order Submit</button>
+      <button onClick={handleOnSubmit} className="btn bg-lime-500 text-white hover:text-black">Order Submit</button>
 
     </div>
   </div>

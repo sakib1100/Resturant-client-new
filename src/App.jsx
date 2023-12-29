@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes } from "react-router-dom"
+import {  Route, Routes } from "react-router-dom"
 import Header from "./Compunent/Header/Header"
 import Home from "./Compunent/Home/Home"
 import BreakFast from "./Compunent/BreakFast/BreakFast"
@@ -7,6 +7,7 @@ import Lunch from "./Compunent/Lunch/Lunch"
 import Order from "./Compunent/Order/Order"
 import Login from "./Compunent/Login/Login"
 import SignIn from "./Compunent/SignIn/SignIn"
+import OrderCart from "./Compunent/OrderCart/OrderCart"
 
 
 
@@ -25,10 +26,11 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signIn" element={<SignIn />}></Route>
+        <Route path="/orderCart" element={<OrderCart />}></Route>
         <Route path="/order/:id" element={<Order />}></Route>
       </Routes>
 
-      <Outlet />
+      {/* <Outlet /> */}
     </div>
   );
 }
