@@ -66,7 +66,7 @@ if(gUser){
               </label>
             </div>
             <div className="form-control">
-              <button type="submit" className="btn btn-orange bg-lime-500 text-white ">Sign In</button>
+              <button type="submit" className="btn btn-orange bg-green-500 text-white ">Sign In</button>
             </div>
             <p className="mt-2">Already have an account pls <Link className="text-orange-700 underline" to="/login">Login</Link></p>
             <div className="divider">OR</div>

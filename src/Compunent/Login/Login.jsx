@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
@@ -36,6 +36,12 @@ if(user){
     button: "Ok",
   });
   navigate('/')
+}
+
+const location = useLocation();
+const from = location.state?.from?.pathname || "/";
+if (user || gUser) {
+  navigate(from, { replace: true });
 }
 
   const handleLogin = async (e) => {
@@ -86,7 +92,7 @@ if(user){
             <div className="form-control">
               <button
                 type="submit"
-                className="btn btn-orange bg-lime-500 text-white "
+                className="btn btn-orange bg-green-500 text-white "
               >
                 Sign In
               </button>

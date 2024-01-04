@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import swal from "sweetalert";
 
 const Order = () => {
 const [count,setCount] = useState(1);
@@ -45,7 +46,11 @@ const handleOnSubmit = () => {
 })
   .then((response) => response.json())
   .then((json) => console.log(json));
-  alert('Data Inserted')
+  swal({ 
+    title: "WOW!",
+   text: "Data Added Successfully",
+   icon: "success", button: "Ok" });
+
 }
 
 
@@ -53,25 +58,25 @@ const handleOnSubmit = () => {
       <div className="hero min-h-screen lg:mt-10">
   <div className="hero-content flex-col lg:flex-row">
     <img src={data.img} className="max-w-md rounded-lg " />
-    <div>
+    <div className="lg:ml-20">
       <h1 className="text-5xl font-bold">{data.name}</h1>
       <p className="py-6">{data.descreption}</p>
       <p className="text-4xl mb-3">Price: ${totalPrice}</p>
       <div className="custom-number-input h-10 w-32 mb-10">
 
   <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-    <button onClick={() => {count > 1 ?  setCount(count - 1): ''}} data-action="decrement" className=" bg-lime-500 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+    <button onClick={() => {count > 1 ?  setCount(count - 1): ''}} data-action="decrement" className=" bg-green-500 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
       <span  className=" m-auto text-2xl font-thin">−</span>
     </button>
     <div className="flex items-center p-5 border"> <p className="text-2xl">{count}</p></div>
-  <button onClick={() => setCount(count + 1)} data-action="increment" className="bg-lime-500 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+  <button onClick={() => setCount(count + 1)} data-action="increment" className="bg-green-500 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
     <span className="m-auto text-2xl font-thin">+</span>
   </button>
 </div>
 </div>
 
 
-      <button onClick={handleOnSubmit} className="btn bg-lime-500 text-white hover:text-black">Order Submit</button>
+      <button onClick={handleOnSubmit} className="btn bg-green-500 text-white hover:text-black">Order Submit</button>
 
     </div>
   </div>

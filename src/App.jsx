@@ -8,6 +8,8 @@ import Order from "./Compunent/Order/Order"
 import Login from "./Compunent/Login/Login"
 import SignIn from "./Compunent/SignIn/SignIn"
 import OrderCart from "./Compunent/OrderCart/OrderCart"
+import RequireAuth from "./Compunent/RequireAuth/RequireAuth"
+import Review from "./Compunent/Review/Review"
 
 
 
@@ -26,8 +28,13 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signIn" element={<SignIn />}></Route>
-        <Route path="/orderCart" element={<OrderCart />}></Route>
-        <Route path="/order/:id" element={<Order />}></Route>
+        <Route path="/review" element={<Review />}></Route>
+        <Route path="/orderCart" element={<RequireAuth>
+          <OrderCart />
+        </RequireAuth>}></Route>
+        <Route path="/order/:id" element={<RequireAuth>
+          <Order />
+        </RequireAuth>}></Route>
       </Routes>
 
       {/* <Outlet /> */}
