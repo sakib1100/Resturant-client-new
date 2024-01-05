@@ -46,12 +46,14 @@ const handleOnSubmit = () => {
 })
   .then((response) => response.json())
   .then((json) => console.log(json));
+  // window.location = window.location.href;
   swal({ 
     title: "WOW!",
    text: "Data Added Successfully",
    icon: "success", button: "Ok" });
 
 }
+
 
 
     return (

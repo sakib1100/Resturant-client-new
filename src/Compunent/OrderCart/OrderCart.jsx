@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import swal from "sweetalert";
+// import { Context } from "../../Context/Context";
 
 const OrderCart = () => {
+  // const { reload } = useContext(Context);
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -20,6 +23,7 @@ const OrderCart = () => {
     };
 
     fetchData();
+   
   }, []);
 
   const handleDelete = (id) => {
@@ -35,6 +39,7 @@ const OrderCart = () => {
             console.log('deleted');
             const remaining = data.filter((ur) => ur._id !== id);
             setData(remaining);
+            // reload();
             swal({ title: "Data Delete!", text: "Data Deleted Successfully", icon: "warning", button: "Ok" });
 
           }
@@ -48,7 +53,7 @@ const OrderCart = () => {
     //   };
     //   calculateTotal();
   return (
-    <body className="bg-gray-100" >
+    <body className="" >
       <div className="container mx-auto mt-10">
         <div className="shadow-md my-10">
           <div className="lg:flex justify-center">

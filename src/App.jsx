@@ -10,6 +10,7 @@ import SignIn from "./Compunent/SignIn/SignIn"
 import OrderCart from "./Compunent/OrderCart/OrderCart"
 import RequireAuth from "./Compunent/RequireAuth/RequireAuth"
 import Review from "./Compunent/Review/Review"
+import Footer from "./Compunent/Footer/Footer"
 
 
 
@@ -36,7 +37,7 @@ function App() {
           <Order />
         </RequireAuth>}></Route>
       </Routes>
-
+<Footer />
       {/* <Outlet /> */}
     </div>
   );

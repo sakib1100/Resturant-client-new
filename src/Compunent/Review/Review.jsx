@@ -1,7 +1,8 @@
 
+
 const Review = () => {
     return (
-<div className="lg:mx-20 max-sm:mx-5 mt-32 mb-10">
+<div className="lg:mx-20 max-sm:mx-5 mt-16 mb-10">
 <section className=" dark:text-neutral-300">
 <div className="mx-auto mb-10 lg:max-w-xl sm:text-center">
           <p className="inline-block text-green-500 text-bold  px-3 py-px mb-4 text-xl  font-bold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">

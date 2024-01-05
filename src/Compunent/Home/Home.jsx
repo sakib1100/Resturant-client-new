@@ -35,8 +35,8 @@ const Home = () => {
     </div>
     <Outlet />
 
-    <Review /> 
     <Team />
+    <Review /> 
         </div>
     );
 };

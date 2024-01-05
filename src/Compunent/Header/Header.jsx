@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
+import {   useEffect, useState } from "react";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase.init";
 import swal from "sweetalert";
 
 const Header = () => {
+  // const { orders } = useContext(OrderContext);
+
   const [user] = useAuthState(auth);
-  // console.log(user)
   const [signOut] = useSignOut(auth);
   const singOut = () => {
- const logout = signOut();
-if(logout){
-  swal({ title: "Logout!", text: "Log Out Successfull", icon: "success", button: "Ok" });
+    const logout = signOut();
+    if (logout) {
+      swal({ title: "Logout!", text: "Log Out Successful", icon: "success", button: "Ok" });
+    }
+  };
 
-}
-  }
-
-  const [data,setData] = useState([]);
+  const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -34,8 +34,6 @@ if(logout){
 
     fetchData();
   }, []);
-
-
 
     return (
         <div>
