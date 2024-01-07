@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import swal from "sweetalert";
+import { OrderContext } from "../../context/OrderContext";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase.init";
 
 const Order = () => {
+  const { reload } = useContext(OrderContext);
 const [count,setCount] = useState(1);
 const [data,setData] = useState('');
+const [user] = useAuthState(auth);
 
 const {price} = data;
 const totalPrice = price * count;
@@ -36,7 +41,8 @@ const handleOnSubmit = () => {
     name:data.name,
     price:totalPrice,
     quantity:count,
-    img:data.img
+    img:data.img,
+    email:user.email
    
 
   }),
@@ -47,6 +53,7 @@ const handleOnSubmit = () => {
   .then((response) => response.json())
   .then((json) => console.log(json));
   // window.location = window.location.href;
+  reload();
   swal({ 
     title: "WOW!",
    text: "Data Added Successfully",

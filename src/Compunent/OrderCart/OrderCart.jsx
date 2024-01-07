@@ -1,16 +1,20 @@
 import {  useEffect, useState } from "react";
 import swal from "sweetalert";
-// import { Context } from "../../Context/Context";
+import { OrderContext } from "../../context/OrderContext";
+import { useContext } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase.init";
 
 const OrderCart = () => {
-  // const { reload } = useContext(Context);
+  const { reload } = useContext(OrderContext);
+  const [user] = useAuthState(auth);
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/getPostData');
+        const response = await fetch(`http://localhost:5000/getPostData?email=${user.email}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -39,7 +43,7 @@ const OrderCart = () => {
             console.log('deleted');
             const remaining = data.filter((ur) => ur._id !== id);
             setData(remaining);
-            // reload();
+            reload();
             swal({ title: "Data Delete!", text: "Data Deleted Successfully", icon: "warning", button: "Ok" });
 
           }

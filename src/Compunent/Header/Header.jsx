@@ -1,11 +1,11 @@
-import {   useEffect, useState } from "react";
+import {   useContext, useEffect, useState } from "react";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase.init";
 import swal from "sweetalert";
-
+import {OrderContext} from '../../context/OrderContext'
 const Header = () => {
-  // const { orders } = useContext(OrderContext);
+  const { orders } = useContext(OrderContext);
 
   const [user] = useAuthState(auth);
   const [signOut] = useSignOut(auth);
@@ -20,7 +20,7 @@ const Header = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/getPostData');
+        const response = await fetch(`http://localhost:5000/getPostData?email=${user.email}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -33,7 +33,7 @@ const Header = () => {
     };
 
     fetchData();
-  }, []);
+  }, [orders]);
 
     return (
         <div>
