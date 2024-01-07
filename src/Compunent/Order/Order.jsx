@@ -16,18 +16,18 @@ const totalPrice = price * count;
 const {id} = useParams();
 console.log(data.name)
 useEffect(() => {
-  fetch(`http://localhost:5000/getBrakFastInsert/${id}`)
+  fetch(`https://restaurant-server-day3.onrender.com/getBrakFastInsert/${id}`)
   .then(res => res.json())
   .then(breakfast => setData(breakfast))
 },[])
 
 useEffect(() => {
-  fetch(`http://localhost:5000/getLunchInsert/${id}`)
+  fetch(`https://restaurant-server-day3.onrender.com/getLunchInsert/${id}`)
   .then(res => res.json())
   .then(lunch => setData(lunch))
 },[])
 useEffect(() => {
-  fetch(`http://localhost:5000/getDinnerInsert/${id}`)
+  fetch(`https://restaurant-server-day3.onrender.com/getDinnerInsert/${id}`)
   .then(res => res.json())
   .then(dinner => setData(dinner))
 },[])
@@ -35,7 +35,7 @@ useEffect(() => {
 
 
 const handleOnSubmit = () => {
-  fetch('http://localhost:5000/postData', {
+  fetch('https://restaurant-server-day3.onrender.com/postData', {
   method: 'POST',
   body: JSON.stringify({
     name:data.name,

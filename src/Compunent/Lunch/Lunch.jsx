@@ -6,7 +6,7 @@ const Lunch = () => {
     const [lunch, setLunch] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/getLuanch')
+        fetch('https://restaurant-server-day3.onrender.com/getLuanch')
             .then(res => res.json())
             .then(data => setLunch(data))
             .catch(error => console.error("Error fetching lunch data:", error));

@@ -14,7 +14,7 @@ const OrderCart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/getPostData?email=${user.email}`);
+        const response = await fetch(`https://restaurant-server-day3.onrender.com/getPostData?email=${user.email}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -33,7 +33,7 @@ const OrderCart = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure you want to delete this product?');
     if (proceed) {
-      const url = `http://localhost:5000/deleteData/${id}`;
+      const url = `https://restaurant-server-day3.onrender.com/deleteData/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

@@ -20,7 +20,7 @@ const Header = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/getPostData?email=${user.email}`);
+        const response = await fetch(`https://restaurant-server-day3.onrender.com/getPostData?email=${user.email}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

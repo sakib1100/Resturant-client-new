@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BreakFast = () => {
     const [breakpast,setBreakpast] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/getBrakFast')
+        fetch('https://restaurant-server-day3.onrender.com/getBrakFast')
         .then(res => res.json())
         .then(data => setBreakpast(data))
     },[])
