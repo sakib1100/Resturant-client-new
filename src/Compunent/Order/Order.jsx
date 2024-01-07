@@ -66,14 +66,14 @@ const handleOnSubmit = () => {
     return (
       <div className="hero min-h-screen lg:mt-10">
   <div className="hero-content flex-col lg:flex-row">
-    <img src={data.img} className="max-w-md rounded-lg " />
+    <img src={data.img} className="max-w-md max-sm:w-80 rounded-lg " />
     <div className="lg:ml-20">
-      <h1 className="text-5xl font-bold">{data.name}</h1>
+      <h1 className="text-5xl max-sm:text-4xl  font-bold">{data.name}</h1>
       <p className="py-6">{data.descreption}</p>
-      <p className="text-4xl mb-3">Price: ${totalPrice}</p>
-      <div className="custom-number-input h-10 w-32 mb-10">
+      <p className="max-sm:text-center text-4xl mb-3">Price: ${totalPrice}</p>
+      <div className="max-sm:d-flex max-sm:mx-auto custom-number-input h-10 w-32 mb-10">
 
-  <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+  <div className="flex  flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
     <button onClick={() => {count > 1 ?  setCount(count - 1): ''}} data-action="decrement" className=" bg-green-500 text-white hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
       <span  className=" m-auto text-2xl font-thin">−</span>
     </button>
@@ -85,8 +85,10 @@ const handleOnSubmit = () => {
 </div>
 
 
-      <button onClick={handleOnSubmit} className="btn bg-green-500 text-white hover:text-black">Order Submit</button>
+ <div className="max-sm:flex max-sm:justify-center">
+ <button onClick={handleOnSubmit} className=" btn bg-green-500 text-white hover:text-black">Order Submit</button>
 
+ </div>
     </div>
   </div>
 </div>
