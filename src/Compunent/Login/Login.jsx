@@ -24,7 +24,7 @@ const Login = () => {
     } catch (error) {
       swal({
         title: 'Oops!',
-        text: 'Login failed. Password and Email do not match.',
+        text: 'Login failed. Password and Email do not match',
         icon: 'error',
         button: 'Ok',
       });
