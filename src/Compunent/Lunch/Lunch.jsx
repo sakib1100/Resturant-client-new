@@ -14,7 +14,8 @@ const Lunch = () => {
 
     return (
         <div className="lg:mx-20 max-sm:mx-10">
-            <h1>Lunch for you {lunch.length}</h1>
+                   <h1>Lunch for you</h1>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
                 {lunch.map((data) => (
                     <div key={data._id} className="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">

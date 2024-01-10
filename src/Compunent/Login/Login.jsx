@@ -101,12 +101,12 @@ const Login = () => {
 
           <div className="form-control">
             <button type="submit" className="btn btn-orange bg-green-500 text-white">
-              Sign In
+             Login
             </button>
           </div>
           <p className="mt-2">
             New to pls{' '}
-            <Link className="text-orange-700 underline" to="/signIn">
+            <Link className="text-green-700 underline" to="/signIn">
               Sign In
             </Link>
           </p>

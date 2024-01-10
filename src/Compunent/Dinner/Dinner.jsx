@@ -13,10 +13,12 @@ const Dinner = () => {
 
     return (
         <div className="lg:mx-20 max-sm:mx-10">
+                    <h1>Dinner for you</h1>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
                 {dinner.map((data) => (
                     <div key={data._id} className="bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
-                        <span className="bg-red-100 border border-red-500 rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4">Lunch</span>
+                        <span className="bg-red-100 border border-red-500 rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4">Dinner</span>
                         <img className="w-64 mx-auto transform transition duration-300 hover:scale-105" src={data.img} alt={data.name} />
                         <div className="flex flex-col items-center my-3 space-y-2">
                             <h1 className="text-gray-900 poppins text-lg">{data.name}</h1>
